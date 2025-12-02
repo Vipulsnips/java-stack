@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>functions</title>
+  </head>
+  <body>
+    <script > 
+    const product= {
+       name:"tees",
+       price:1999,
+       rating:{
+        stars:4.5,
+        count:10
+       },
+       fun : function function1(){
+        console.log("this is the function inside the object")
+       }
+    }
+    // console.log(product);
+    // console.log(product.name);
+    // console.log(product.price);
+    // product.price=999;
+    // console.log(product.ruppee);
+    //------------- add-----
+    // product.quality='GOOD';
+    // console.log(product);
+    //------------- delete-----------------
+    // delete product.quality;
+    // console.log(product);
+
+    //--------------bracket notation-----------
+    // console.log(product['price']);
+    // console.log(product['trash']);          //will give undefined
+
+    //-------------------nested objects------------
+    // console.log(product.rating.count
+    // )
+    // console.log(product[rating[count]])
+
+    //--------------------- func in object------------
+    product.fun();
+    </script>
+  </body>
+</html> 
