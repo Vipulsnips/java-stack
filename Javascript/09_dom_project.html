@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>DOM Projects</title>
+  </head>
+  <body>
+    <p>Youtube Subscribe Button</p>
+    <button class="js-sub-button" onclick="
+      textchanger();
+    ">Subscribe</button>
+    
+
+    <script>
+      function textchanger(){
+        const text=document.querySelector('.js-sub-button');
+        if(text.innerHTML   === 'Subscribe') text.innerHTML='Subscribed';
+        else text.innerHTML='Subscribe';
+      }
+    </script>
+  </body>
+</html> 

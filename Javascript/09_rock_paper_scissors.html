@@ -13,30 +13,40 @@
   ">Rock</button>
   <button onclick="
     resultEval('Paper');
-  ">Paper</button>
+    ">Paper</button>
   <button onclick="
     resultEval('Scissors');
   ">Scissors</button>
+
+  <p class="js-result"></p>
+  <p class="js-choice"></p>
+  <p class="js-score"></p>
+
   <button onclick="
     score.wins=0;   
     score.losses=0;
     score.ties=0;
     localStorage.removeItem('score');
-  ">reset</button>
+    updatescore();
+    ">reset</button>
   <script>
     let score=JSON.parse(localStorage.getItem('score')) || {
-        wins:0,
+      wins:0,
         losses:0,
         ties:0
       };
-    console.log(localStorage.getItem('score'));
-    // if(!score){
+      console.log(localStorage.getItem('score'));
+      // if(!score){
     //   score={
     //     wins:0,
     //     losses:0,
     //     ties:0
     //   }
     // }
+    function updatescore(){
+      document.querySelector('.js-score')
+      .innerHTML =` wins:${score.wins}, Ties:${score.ties}, Losses:${score.losses}`;
+    }
     function pickMove(){
       let choice='';
       const value=Math.random();
@@ -67,9 +77,11 @@
       else if(result=== 'Tie') score.ties++;
       else score.losses++;
       localStorage.setItem('score',JSON.stringify(score));
-      alert(`You picked ${playermove} and the computer picked ${choice} so the result is ${result} \n the score is: 
-      wins:${score.wins}, Ties:${score.ties}, Losses:${score.losses}`);
-
+      updatescore();
+      document.querySelector('.js-result')
+        .innerHTML=result;
+      document.querySelector('.js-choice')
+        .innerHTML=`you chose ${playermove} and computerchose ${choice}`;
     }
   </script>
 </body>

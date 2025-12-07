@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>DOM</title>
+  </head>
+  <body>
+    <button>hello</button>
+    <button style="display: block;" class="js-button">button 2</button>
+    <script>
+      console.log(document.querySelector('button'));
+      document.querySelector('button')
+        .innerHTML='changed';
+      document.querySelector('.js-button')
+        .innerHTML="newly changed";
+      console.log(document.body);
+      // console.log(document.title);
+      // document.title="changed";
+      // console.log(document.body);
+      // console.log(typeof document.body);
+      // console.log(document.body.innerHTML);
+      // document.body.innerHTML="<button> help </button>";
+      // document.body.innerHTML="hello";
+      // document.title="DOM BUT EDITED";
+    </script>
+  </body>
+</html> 

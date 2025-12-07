@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>functions</title>
+    <title>OBJECTS</title>
   </head>
   <body>
     <script > 
@@ -38,7 +38,52 @@
     // console.log(product[rating[count]])
 
     //--------------------- func in object------------
-    product.fun();
+    // product.fun();
+    //---------------------- JSON -------------------
+    // const json=JSON.stringify(product)
+    // console.log(json);
+    // console.log( typeof json);
+    // console.log(JSON.parse(json));
+
+    //------------------------auto boxing----------------------
+    // console.log('help'.length);
+    // console.log(true.toString);
+    // console.log((123).toString);
+
+    //---------------------obj-------------------
+    // const product1= product;
+    // const product2= {
+    //    name:"tees",
+    //    price:1999,
+    //    rating:{
+    //     stars:4.5,
+    //     count:10
+    //    },
+    //    fun : function function1(){
+    //     console.log("this is the function inside the object")
+    //    }
+    // }
+    // console.log(product1===product);  //true as references are same here
+    // console.log(product2===product);  //false as references are different here
+    //-------------------destructuring---------------------------
+    // const {name, price } =product;
+    // console.log(name+" " + price);
+
+    // //----------------short writing-----------------
+    // const product2={
+    //   name,price
+    // }
+    // console.log(product2);
+
+    //----------------------function short-----------------
+    const obj={
+      fun(){
+        // alert("haha");
+        console.log("Good Morning".toLowerCase());
+        console.log("Good Morning".repeat(2));
+      }
+    }
+    obj.fun();
     </script>
   </body>
 </html> 
