@@ -3,16 +3,49 @@
   <head>
     <title>DOM Projects</title>
   </head>
+  <style>
+    body{
+      font-family:arial;
+      text-transform: capitalize;
+    }
+    .sub-button{
+      border-radius: 45px;
+      background-color: #000000;
+      color: white;
+      padding:10px 15px 10px 15px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-bottom: 30px;
+    }
+    .is-subscribed{
+      background-color: lightgray;
+      color: black;;
+    }
+    .cost-input{
+      font-size:15px ;
+      padding: 10px;
+      text-transform: capitalize;
+    }
+    .calculate{
+      padding: 13px;
+      text-transform: capitalize;
+      background-color: green;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
   <body>
     <p>Youtube Subscribe Button</p>
-    <button class="js-sub-button" onclick="
+    <button class="js-sub-button sub-button" onclick="
       textchanger();
     ">Subscribe</button>
-    <p>amazon shipping calculator</p>
-    <input class="js-cost-input" placeholder="cost of order" onkeydown="
+    <h3>amazon shipping calculator</h3>
+    <p>order below $40 will have $10 as shipping</p>
+    <input class="js-cost-input cost-input" placeholder="cost of order" onkeydown="
       handlekey(event);
     ">
-    <button onclick="
+    <button class='calculate' onclick="
       calTotal();
     ">calculate</button>
     <p class="result"></p>
@@ -39,8 +72,14 @@
       }
       function textchanger(){
         const text=document.querySelector('.js-sub-button');
-        if(text.innerHTML   === 'Subscribe') text.innerHTML='Subscribed';
-        else text.innerHTML='Subscribe';
+        if(text.innerHTML   === 'Subscribe') {
+          text.innerHTML='Subscribed';
+          text.classList.add('is-subscribed');
+        }
+        else {
+          text.innerHTML='Subscribe';
+          text.classList.remove('is-subscribed');
+        }
       }
       function checker(){
         const out=document.querySelector(".input").value;
