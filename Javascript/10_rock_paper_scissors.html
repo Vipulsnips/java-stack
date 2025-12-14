@@ -33,7 +33,7 @@
     score.wins=0;   
     score.losses=0;
     score.ties=0;
-    localStorage.removeItem('score');
+    localStorage.setItem('score', JSON.stringify(score));
     updatescore();
     " class="reset-btn">Reset Score</button>
   <script src="scripts/10_rock_paper_n_scissors.js">

@@ -27,7 +27,7 @@
       const choice= pickMove();
       let result='';
       if(playermove=== 'Scissors'){
-        if(choice==='Rock') result='Lose';
+        if(choice==='Rock') result='Lost';
         else if(choice === 'Paper') result='Win';
         else result='Tie';
       }
@@ -52,5 +52,4 @@
         .innerHTML=`  you <img src="images/${playermove}-emoji.png" class="move-img"> <img src="images/${choice}-emoji.png" class="move-img">  computer`;
     }
     
-    document.querySelector('.js-score')
-    .innerHTML =` wins:${score.wins}, Ties:${score.ties}, Losses:${score.losses}`;
+  updatescore();
