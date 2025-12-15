@@ -8,12 +8,16 @@ function addtodo() {
   inp.value = '';
   renderTodo();
 }
+document.querySelector('.js-add-btn')
+  .addEventListener('click',()=>{
+    addtodo();
+  });
+
 renderTodo();
 function renderTodo() {
   let html = '';
-  for (let i = 0; i < arr.length; i++) {
-    const {name}=arr[i];
-    const {dueDate}=arr[i];
+  arr.forEach((value,index)=>{
+    const {name,dueDate} = value;
     html += 
       `<div>
         ${name}
@@ -22,15 +26,19 @@ function renderTodo() {
         ${dueDate}
       </div>
       <div>
-        <button onclick="
-          arr.splice(${i},1);  
-          localStorage.setItem('arr',JSON.stringify(arr));
-          renderTodo();
-        "
-        class="delete-btn"
+        <button class="delete-btn js-delete-btn"
         >Delete</button>
       </div>`
     ;
-  }
+  })
   document.querySelector(".inputText").innerHTML = html;
+  document.querySelectorAll('.js-delete-btn')
+    .forEach((deletebtn, index)=>{
+      deletebtn.addEventListener('click',()=>{
+          arr.splice(index,1);  
+          localStorage.setItem('arr',JSON.stringify(arr));
+          renderTodo();
+      });
+    });
+
 }
